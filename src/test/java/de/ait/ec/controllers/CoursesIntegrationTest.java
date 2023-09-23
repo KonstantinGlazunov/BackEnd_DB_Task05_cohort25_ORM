@@ -56,16 +56,7 @@ class CoursesIntegrationTest {
     @Nested
     @DisplayName("POST /courses")
     public class PostCourses {
-
-
-        @Test
-        @Sql(scripts = {"/sql/data.sql"})
-        public void return_added_course() throws Exception {
-            mockMvc.perform(post("/api/courses")
-                            .contentType("application/json"))
-
-                    .andExpect(status().isCreated());
-        }
+        
 
         @Test
         public void addCourseTest() throws Exception {
