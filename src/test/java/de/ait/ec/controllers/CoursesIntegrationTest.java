@@ -46,9 +46,7 @@ class CoursesIntegrationTest {
                     .andExpect((jsonPath("$.[0].beginDate", is("2000-01-01"))))
                     .andExpect((jsonPath("$.[0].endDate", is("2000-02-02"))))
                     .andExpect((jsonPath("$.[0].price", is(100.0))))
-                    .andExpect((jsonPath("$.[0].state", is("DRAFT"))))
-            ;
-
+                    .andExpect((jsonPath("$.[0].state", is("DRAFT"))));
         }
     }
 
@@ -56,8 +54,6 @@ class CoursesIntegrationTest {
     @Nested
     @DisplayName("POST /courses")
     public class PostCourses {
-        
-
         @Test
         public void addCourseTest() throws Exception {
             String postJson = "{\"title\":\"Test course title\",\"description\":\"Test course description\",\"beginDate\":\"2000-01-01\",\"endDate\":\"2000-02-02\",\"price\":100.0}";
